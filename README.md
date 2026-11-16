@@ -2,7 +2,7 @@
 
 ## Project Planning
 
-- [Project board](PASTE-YOUR-BOARD-URL-HERE)
+- [Project board](https://github.com/orgs/SEB-PT-10/projects/1/views/1)
 - [Wireframe](./wireframe.png)
 
 ### Sprint 1
