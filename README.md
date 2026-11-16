@@ -12,7 +12,7 @@ The user has to choose the right path until they reach the winning endpoint.  If
 
 ### Sprint 1
 
-Goal: [Describe the result you want.]
+Goal: The player can move through 3 different sets of choices, with 2 ending in a loss and 1 ending in a win.
 
-Start: [Date]
-End: [Date]
+Start: 16 Nov
+End: 24 Nov
