@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap'); /* "Princess Sofia", cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap'); /* "Inspiration", cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');  /* "Sankofa Display", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');  /* "EB Garamond", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');  /* "Bungee Hairline", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap'); /* "Ojuju", sans-serif; */
+
+
+:root {
+  --color-primary: #f2a3c7;
+  --color-primary-hover: #ab4792;
+  --color-light: #fff1e7;
+
+  --color-background: #211c36;;
+  --color-surface: #3d2d50;
+  --color-border: #c7b4ee;
+  --color-headings: #ebc879;
+  --color-text: #fff1e7;
+
+  --color-success: #376454;
+  --color-error:  #ad4e70;
+  --color-warning: #ebc879;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0px;
+  padding: 20px 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  font-weight: 200;
+  color: black;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;;
+  padding: .4rem 1rem;
+}
+
+#start {
+    background-color: var(--color-success);
+    border: 1px solid var(--color-warning);
+    color: var(--color-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-headings);
+    text-align: center;
+    font-family: "EB Garamond", serif;
+}
+
+/* Scope your display rule to only apply when the dialog is actually open */
+#instructions[open] {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    background-color: var(--color-surface);
+    border-radius: 5px;
+    border: 1px solid var(--color-warning);
+    color: var(--color-light);
+    font-weight: 100;
+    max-width: 70vw;
+    margin: 30vh auto;
+    /* text-align: center; */
+}
+
+#instructions h2 {
+    font-family: "Sankofa Display", sans-serif;
+    font-size: 2rem;
+}
+
+#instructions::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card-close {
+    align-self: flex-end;
+}
+
+.card-close > button {
+    padding: .1rem .5rem .05rem .5rem;
+    font-weight: bold;
+    border-radius: 20%;
+    background-color: var(--color-error);
+    border: none;
+}

@@ -16,3 +16,21 @@ Goal: The player can move through 3 different sets of choices, with 2 ending in 
 
 Start: 16 Nov
 End: 24 Nov
+
+
+### Credits
+- Game logo came from chatgpt.com
+
+
+### Code Graveyard
+
+```css
+  --midnight: #211c36;
+  --plum: #3d2d50;
+  --jade: #376454;
+  --pink: #f2a3c7;
+  --lavender: #c7b4ee;
+  --gold: #ebc879;
+  --ivory: #fff1e7;
+  --berry: #ad4e70;
+```
