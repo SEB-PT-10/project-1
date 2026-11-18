@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap'); /* "Princess Sofia", cursive; */
-@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap'); /* "Inspiration", cursive;*/
-@import url('https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap');  /* "Sankofa Display", sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');  /* "EB Garamond", serif; */
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap');  /* "Bungee Hairline", sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap'); /* "Ojuju", sans-serif; */
-
+@import url("https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap"); /* "Princess Sofia", cursive; */
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&display=swap"); /* "Inspiration", cursive;*/
+@import url("https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap"); /* "Sankofa Display", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"); /* "EB Garamond", serif; */
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap"); /* "Bungee Hairline", sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap"); /* "Ojuju", sans-serif; */
 
 :root {
   --color-primary: #f2a3c7;
   --color-primary-hover: #ab4792;
   --color-light: #fff1e7;
 
-  --color-background: #211c36;;
+  --color-background: #211c36;
   --color-surface: #3d2d50;
   --color-border: #c7b4ee;
   --color-headings: #ebc879;
   --color-text: #fff1e7;
 
   --color-success: #376454;
-  --color-error:  #ad4e70;
+  --color-error: #ad4e70;
   --color-warning: #ebc879;
 }
 
@@ -47,41 +46,46 @@ button {
   color: black;
   background-color: var(--color-primary);
   border: 1px solid var(--color-primary);
-  border-radius: 5px;;
-  padding: .4rem 1rem;
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
 }
 
 #start {
-    background-color: var(--color-success);
-    border: 1px solid var(--color-warning);
-    color: var(--color-light);
+  background-color: var(--color-success);
+  border: 1px solid var(--color-warning);
+  color: var(--color-light);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-headings);
-    text-align: center;
-    font-family: "EB Garamond", serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-headings);
+  text-align: center;
+  font-family: "EB Garamond", serif;
+}
+
+.header {
+  font-family: "Sankofa Display", sans-serif;
+  font-size: 2rem;
 }
 
 /* Scope your display rule to only apply when the dialog is actually open */
 #instructions[open] {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    background-color: var(--color-surface);
-    border-radius: 5px;
-    border: 1px solid var(--color-warning);
-    color: var(--color-light);
-    font-weight: 100;
-    max-width: 70vw;
-    margin: 30vh auto;
-    /* text-align: center; */
-}
-
-#instructions h2 {
-    font-family: "Sankofa Display", sans-serif;
-    font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  border: 1px solid var(--color-warning);
+  color: var(--color-light);
+  font-weight: 100;
+  max-width: 70vw;
+  margin: 30vh auto;
+  /* text-align: center; */
 }
 
 #instructions::backdrop {
@@ -89,13 +93,70 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-close {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .card-close > button {
-    padding: .1rem .5rem .05rem .5rem;
-    font-weight: bold;
-    border-radius: 20%;
-    background-color: var(--color-error);
-    border: none;
+  padding: 0.1rem 0.5rem 0.05rem 0.5rem;
+  font-weight: bold;
+  border-radius: 20%;
+  background-color: var(--color-error);
+  border: none;
 }
+
+main {
+  margin: 1rem 0;
+  border: 1px solid var(--color-warning);
+  min-height: 60vh;
+  min-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characters {
+  display: flex;
+}
+
+/* sprites */
+.nyeka-sprite {
+  width: 8rem;
+  height: 8rem;
+  background-image: url("./assets/nyeka.png");
+  background-repeat: no-repeat;
+  background-size: 16rem auto;
+  background-position: 0 0;
+  animation: move 0.6s steps(2) infinite;
+}
+
+.remi-sprite {
+  width: 8rem;
+  height: 8rem;
+  background-image: url("./assets/remi.png");
+  background-repeat: no-repeat;
+  background-size: 16rem auto;
+  background-position: 0 0;
+  animation: move 0.6s steps(2) infinite reverse;
+}
+
+.adekola-sprite {
+  width: 8rem;
+  height: 8rem;
+  background-image: url("./assets/adekola.png");
+  background-repeat: no-repeat;
+  background-size: 16rem auto;
+  background-position: 0 0;
+  animation: move 0.6s steps(2) infinite;
+}
+
+@keyframes move {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -16rem 0;
+  }
+}
+
+

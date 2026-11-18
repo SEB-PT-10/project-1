@@ -18,8 +18,9 @@ Start: 16 Nov
 End: 24 Nov
 
 
-### Credits
-- Game logo came from chatgpt.com
+### Sprite Credits
+
+Character sprites were generated with the assistance of [ChatGPT](https://chatgpt.com) by OpenAI and customized for this project.
 
 
 ### Code Graveyard
