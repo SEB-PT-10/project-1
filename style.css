@@ -7,7 +7,8 @@
 
 :root {
   --color-primary: #f2a3c7;
-  --color-primary-hover: #ab4792;
+  --color-primary-hover: #be7495;
+  --color-accent: #ab4792;
   --color-light: #fff1e7;
 
   --color-background: #211c36;
@@ -29,7 +30,7 @@
 body {
   background-color: var(--color-background);
   color: var(--color-text);
-  font-family: sans-serif;
+  font-family: "Courier New", Courier, monospace;
   line-height: 1.5;
   margin: 0px;
   padding: 20px 0;
@@ -50,6 +51,18 @@ button {
   padding: 0.4rem 1rem;
 }
 
+button:hover {
+  background-color: var(--color-primary-hover);
+  border: 1px solid var(--color-primary-hover);
+  color: var(--color-light);
+}
+
+button:active {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  color: var(--color-light);
+}
+
 #start {
   background-color: var(--color-success);
   border: 1px solid var(--color-warning);
@@ -67,8 +80,8 @@ h6 {
   font-family: "EB Garamond", serif;
 }
 h1 {
-    font-size: 3rem;
-    padding-bottom: .5rem;
+  font-size: 3rem;
+  padding-bottom: 0.5rem;
 }
 
 h2 {
@@ -118,6 +131,16 @@ main {
   align-items: center;
 }
 
+#message {
+  padding-top: 1rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+input {
+  font: inherit;
+  line-height: 1.9rem;
+}
+
 .characters {
   display: flex;
 }
@@ -162,5 +185,3 @@ main {
     background-position: -16rem 0;
   }
 }
-
-

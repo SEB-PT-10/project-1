@@ -1,21 +1,69 @@
 // ------------------------ VARIABLES ------------------------------ //
-
+let isGameStarted = false
+let chosenCharacter
+let username
 
 // ------------------------ CACHED ELEMENTS ------------------------ //
 const openInstructionsBtnEl = document.querySelector('#open-instructions')
 const closeInstructionsBtnEl = document.querySelector('#close-instructions')
 const instructionsEl = document.querySelector('#instructions')
+const messageEl = document.querySelector('#message')
 
 // characters 
 const nyekaEl = document.querySelector('#nyeka')
 const remiEl = document.querySelector('#remi')
 const adekolaEL = document.querySelector('#adekola')
+const characterEls = document.querySelectorAll('.characters > div')
 
 
 // ------------------------ FUNCTIONS ------------------------------ //
-const chooseCharacter = (event) => {
-    console.log(event.target.id)
+const render = () => {
+    if (!isGameStarted) {
+        messageEl.innerHTML = `
+            <form>
+                <input id="name" type="text" placeholder="Choose a name" />
+                <button id="start-name" type="submit">Start</button>
+            </form>
+        `
+
+        const startNameBtnEl = document.querySelector('#start-name')
+        const nameInputEl = document.querySelector('#name')
+
+        startNameBtnEl.addEventListener('click', (event) => {
+            username = nameInputEl.value
+            isGameStarted = true
+            messageEl.innerHTML = `<p>Welcome ${username}</p>`
+        })
+    } else {
+        alert('game is started')
+    }
 }
+
+render()
+
+const chooseCharacter = (event) => {
+    if (event.target.id === 'nyeka' && !isGameStarted) {
+        chosenCharacter = 'nyeka'
+
+        nyekaEl.classList.toggle('nyeka', 'choose-again')
+        remiEl.classList.toggle('remi')
+        adekolaEL.classList.toggle('adekola')
+    } else if (event.target.id === 'remi' && !isGameStarted) {
+        chosenCharacter = 'remi'
+
+        remiEl.classList.toggle('remi', 'choose-again')
+        nyekaEl.classList.toggle('nyeka')
+        adekolaEL.classList.toggle('adekola')
+    } else if (event.target.id === 'adekola' && !isGameStarted) { 
+        chosenCharacter = 'adekola'
+
+        adekolaEL.classList.toggle('adekola', 'choose-again')
+        nyekaEl.classList.toggle('nyeka')
+        remiEl.classList.toggle('remi')
+    }
+    render()
+}
+
 
 // ------------------------ EVENT LISTENERS ------------------------ //
 openInstructionsBtnEl.addEventListener('click', () => {
@@ -28,6 +76,6 @@ closeInstructionsBtnEl.addEventListener('click', () => {
 })
 
 // characters 
-nyekaEl.addEventListener('click', chooseCharacter)
-remiEl.addEventListener('click', chooseCharacter)
-adekolaEL.addEventListener('click', chooseCharacter)
+characterEls.forEach((character) => {
+    character.addEventListener('click', chooseCharacter)
+})
