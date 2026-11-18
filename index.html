@@ -8,22 +8,23 @@
     <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>The Velvet Grove</h1>
+    <h1>✦ The Velvet Grove ✦</h1>
     <main>
-        <h2>Choose Your Character</h2>
+        <h2 id="scene">Choose Your Character</h2>
         <div class="characters">
             <div class="nyeka" id="nyeka"></div>
             <div class="remi" id="remi"></div>
             <div class="adekola" id="adekola"></div>
         </div>
         <div id="message"></div>
+        <div id="error-message"></div>
     </main>
     
     <div class="actions">
         <button id="open-instructions">How to Play</button>
         <!-- <button id="start">Start Game</button> -->
     </div>
-    
+
     <dialog id="instructions">
         <div class="card-close">
             <button id="close-instructions">X</button>

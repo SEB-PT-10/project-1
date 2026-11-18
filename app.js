@@ -1,13 +1,14 @@
 // ------------------------ VARIABLES ------------------------------ //
 let isGameStarted = false
 let chosenCharacter
-let username
+let username = null
 
 // ------------------------ CACHED ELEMENTS ------------------------ //
 const openInstructionsBtnEl = document.querySelector('#open-instructions')
 const closeInstructionsBtnEl = document.querySelector('#close-instructions')
 const instructionsEl = document.querySelector('#instructions')
 const messageEl = document.querySelector('#message')
+const errorMessageEl = document.querySelector('#error-message')
 
 // characters 
 const nyekaEl = document.querySelector('#nyeka')
@@ -29,10 +30,19 @@ const render = () => {
         const startNameBtnEl = document.querySelector('#start-name')
         const nameInputEl = document.querySelector('#name')
 
+        // makes sure user doesn't have to re-type username if they submit before choosing a character
+        nameInputEl.value = username
+
         startNameBtnEl.addEventListener('click', (event) => {
+            event.preventDefault()
             username = nameInputEl.value
-            isGameStarted = true
-            messageEl.innerHTML = `<p>Welcome ${username}</p>`
+            if (chosenCharacter) {
+                messageEl.innerHTML = `<p>Welcome ${username}</p>`
+                isGameStarted = true
+                errorMessageEl.textContent = ''
+            } else {
+                errorMessageEl.textContent = `✧ ⋆₊⊹ Please choose a character ⊹₊⋆ ✧`
+            }
         })
     } else {
         alert('game is started')
