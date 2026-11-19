@@ -25,7 +25,7 @@ const characterEls = document.querySelectorAll('.characters > div')
 const render = () => {
     if (!isGameStarted) {
         // makes sure user doesn't have to re-type username if they submit before choosing a character
-        nameInputEl.value = username
+        // nameInputEl.value = username
 
         startNameBtnEl.addEventListener('click', (event) => {
             event.preventDefault()
@@ -40,7 +40,9 @@ const render = () => {
                 isError = true
             }
         })
-    } 
+    } else {
+        alert('game is started')
+    }
     console.log(isCharacterChosen)
 }
 
@@ -54,9 +56,9 @@ const chooseCharacter = (event) => {
         remiEl.classList.toggle('remi')
         adekolaEL.classList.toggle('adekola')
 
-        if (isError) {
-            startNameBtnEl.style.backgroundColor = 'red'
-        }
+        // if (isError) {
+        //     startNameBtnEl.style.backgroundColor = 'var(--color-accent)'
+        // }
     } else if (event.target.id === 'remi' && !isGameStarted) {
         chosenCharacter = 'remi'
 
@@ -71,6 +73,7 @@ const chooseCharacter = (event) => {
         remiEl.classList.toggle('remi')
     }
     isCharacterChosen = !isCharacterChosen
+    username = nameInputEl.value
     render()
 }
 
