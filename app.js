@@ -30,7 +30,7 @@ const render = () => {
         startNameBtnEl.addEventListener('click', (event) => {
             event.preventDefault()
             username = nameInputEl.value
-            if (chosenCharacter && isCharacterChosen) {
+            if (chosenCharacter && isCharacterChosen && nameInputEl.value) {
                 messageEl.innerHTML = `<p>Welcome ${username}</p>`
                 isGameStarted = true
                 isError = false
@@ -40,9 +40,7 @@ const render = () => {
                 isError = true
             }
         })
-    } else {
-        alert('game is started')
-    }
+    } 
     console.log(isCharacterChosen)
 }
 
