@@ -171,6 +171,8 @@ main {
 #message {
   padding-top: 1rem;
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
 }
 
 #error-message {
@@ -188,6 +190,11 @@ input {
 
 .characters {
   display: flex;
+  justify-content: center;
+}
+
+#scene > img {
+    width: 75vw;
 }
 
 /* sprites */

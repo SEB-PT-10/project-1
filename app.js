@@ -13,6 +13,7 @@ const messageEl = document.querySelector('#message')
 const errorMessageEl = document.querySelector('#error-message')
 const startNameBtnEl = document.querySelector('#start-name')
 const nameInputEl = document.querySelector('#name')
+const sceneEl = document.querySelector('#scene')
 
 // characters 
 const nyekaEl = document.querySelector('#nyeka')
@@ -35,6 +36,9 @@ const render = () => {
                 isGameStarted = true
                 isError = false
                 errorMessageEl.textContent = ''
+                setTimeout(() => {
+                    sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit.png" />`
+                }, 1500)
             } else {
                 errorMessageEl.textContent = `✧ ⋆₊⊹ Please choose a character ⊹₊⋆ ✧`
                 isError = true
