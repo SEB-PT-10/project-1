@@ -14,6 +14,7 @@ const errorMessageEl = document.querySelector('#error-message')
 const startNameBtnEl = document.querySelector('#start-name')
 const nameInputEl = document.querySelector('#name')
 const sceneEl = document.querySelector('#scene')
+const sceneTitleEl = document.querySelector('#scene-title')
 
 // characters 
 const nyekaEl = document.querySelector('#nyeka')
@@ -37,7 +38,16 @@ const render = () => {
                 isError = false
                 errorMessageEl.textContent = ''
                 setTimeout(() => {
-                    sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit.png" />`
+                    if (chosenCharacter === 'nyeka') {
+                        sceneTitleEl.textContent = 'The forest is calling you...'
+                        sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-nyeka.png" />`
+                    } else if (chosenCharacter === 'remi') {
+                        sceneTitleEl.textContent = 'The forest is calling you...'
+                        sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-remi.png" />`
+                    } else {
+                        sceneTitleEl.textContent = 'The forest is calling you...'
+                        sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-adekola.png" />`
+                    }
                 }, 1500)
             } else {
                 errorMessageEl.textContent = `✧ ⋆₊⊹ Please choose a character ⊹₊⋆ ✧`
@@ -60,15 +70,13 @@ const chooseCharacter = (event) => {
         remiEl.classList.toggle('remi')
         adekolaEL.classList.toggle('adekola')
 
-        // if (isError) {
-        //     startNameBtnEl.style.backgroundColor = 'var(--color-accent)'
-        // }
-    } else if (event.target.id === 'remi' && !isGameStarted) {
+        } else if (event.target.id === 'remi' && !isGameStarted) {
         chosenCharacter = 'remi'
-
+        
         remiEl.classList.toggle('remi', 'choose-again')
         nyekaEl.classList.toggle('nyeka')
         adekolaEL.classList.toggle('adekola')
+
     } else if (event.target.id === 'adekola' && !isGameStarted) { 
         chosenCharacter = 'adekola'
 

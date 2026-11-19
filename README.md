@@ -39,6 +39,12 @@ Character sprites were generated with the assistance of [ChatGPT](https://chatgp
   --berry: #ad4e70;
 ```
 
+```js
+        // if (isError) {
+            //     startNameBtnEl.style.backgroundColor = 'var(--color-accent)'
+            // }
+```
+
 ### Choices Map
 
 ```bash
