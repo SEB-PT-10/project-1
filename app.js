@@ -38,14 +38,14 @@ const render = () => {
                 isError = false
                 errorMessageEl.textContent = ''
                 setTimeout(() => {
+                    sceneTitleEl.innerHTML = `<p>You receive a magical heirloom.  That night, a spirit appears and calls you into the forest. </p>`
                     if (chosenCharacter === 'nyeka') {
-                        sceneTitleEl.textContent = 'The forest is calling you...'
                         sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-nyeka.png" />`
                     } else if (chosenCharacter === 'remi') {
-                        sceneTitleEl.textContent = 'The forest is calling you...'
+                        // sceneTitleEl.textContent = 'The forest is calling you...'
                         sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-remi.png" />`
                     } else {
-                        sceneTitleEl.textContent = 'The forest is calling you...'
+                        // sceneTitleEl.textContent = 'The forest is calling you...'
                         sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-adekola.png" />`
                     }
                 }, 1500)
