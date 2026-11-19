@@ -17,6 +17,9 @@ Goal: The player can move through 3 different sets of choices, with 2 ending in 
 Start: 16 Nov
 End: 24 Nov
 
+### CSS Credits
+
+The animated glowing button CSS was created with the assistance of [ChatGPT](https://chatgpt.com) by OpenAI and customized for this project.
 
 ### Sprite Credits
 

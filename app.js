@@ -1,5 +1,7 @@
 // ------------------------ VARIABLES ------------------------------ //
 let isGameStarted = false
+let isError = false
+let isCharacterChosen = false
 let chosenCharacter
 let username = null
 
@@ -9,6 +11,8 @@ const closeInstructionsBtnEl = document.querySelector('#close-instructions')
 const instructionsEl = document.querySelector('#instructions')
 const messageEl = document.querySelector('#message')
 const errorMessageEl = document.querySelector('#error-message')
+const startNameBtnEl = document.querySelector('#start-name')
+const nameInputEl = document.querySelector('#name')
 
 // characters 
 const nyekaEl = document.querySelector('#nyeka')
@@ -20,33 +24,26 @@ const characterEls = document.querySelectorAll('.characters > div')
 // ------------------------ FUNCTIONS ------------------------------ //
 const render = () => {
     if (!isGameStarted) {
-        messageEl.innerHTML = `
-            <form>
-                <input id="name" type="text" placeholder="Choose a name" />
-                <button id="start-name" type="submit">Start</button>
-            </form>
-        `
-
-        const startNameBtnEl = document.querySelector('#start-name')
-        const nameInputEl = document.querySelector('#name')
-
         // makes sure user doesn't have to re-type username if they submit before choosing a character
         nameInputEl.value = username
 
         startNameBtnEl.addEventListener('click', (event) => {
             event.preventDefault()
             username = nameInputEl.value
-            if (chosenCharacter) {
+            if (chosenCharacter && isCharacterChosen) {
                 messageEl.innerHTML = `<p>Welcome ${username}</p>`
                 isGameStarted = true
+                isError = false
                 errorMessageEl.textContent = ''
             } else {
                 errorMessageEl.textContent = `✧ ⋆₊⊹ Please choose a character ⊹₊⋆ ✧`
+                isError = true
             }
         })
     } else {
         alert('game is started')
     }
+    console.log(isCharacterChosen)
 }
 
 render()
@@ -58,6 +55,10 @@ const chooseCharacter = (event) => {
         nyekaEl.classList.toggle('nyeka', 'choose-again')
         remiEl.classList.toggle('remi')
         adekolaEL.classList.toggle('adekola')
+
+        if (isError) {
+            startNameBtnEl.style.backgroundColor = 'red'
+        }
     } else if (event.target.id === 'remi' && !isGameStarted) {
         chosenCharacter = 'remi'
 
@@ -71,6 +72,7 @@ const chooseCharacter = (event) => {
         nyekaEl.classList.toggle('nyeka')
         remiEl.classList.toggle('remi')
     }
+    isCharacterChosen = !isCharacterChosen
     render()
 }
 
