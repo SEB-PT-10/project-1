@@ -184,6 +184,11 @@ main {
   border-radius: 6px; */
 }
 
+#choices {
+    display: flex;
+    gap: .5rem;
+}
+
 input {
   font: inherit;
   line-height: 1.9rem;

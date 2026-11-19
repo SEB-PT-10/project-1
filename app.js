@@ -40,7 +40,12 @@ const render = () => {
                 setTimeout(() => {
                     sceneTitleEl.innerHTML = `<p>You receive a magical heirloom.  That night, a spirit appears and calls you into the forest. </p>`
                     if (chosenCharacter === 'nyeka') {
-                        sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-nyeka.png" />`
+                        sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-nyeka.png" />
+                        <br/>
+                        <div id="choices">
+                        <button>Follow the spirit immediately</button> <button>Ask the village elder first</button>
+                        </div>
+                        `
                     } else if (chosenCharacter === 'remi') {
                         // sceneTitleEl.textContent = 'The forest is calling you...'
                         sceneEl.innerHTML = `<img src="assets/moonlit-grove-and-the-enchanted-spirit-remi.png" />`
